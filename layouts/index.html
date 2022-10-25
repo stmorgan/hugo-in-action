@@ -20,8 +20,8 @@
         <h1>{{site.Title}}</h1>
       {{end}} 
 
-      <h2>{{$.Param "subtitle"}}</h2>
-      <a href="./blog">Explore</a>
+      <h2>{{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}</h2>
+      <a href="{{ref . (.Param "explore")}}">Explore</a>
     </section>
     <footer>
         <a href="./blog">Blog</a>
